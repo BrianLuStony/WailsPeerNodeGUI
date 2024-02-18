@@ -1,28 +1,16 @@
-/* index.css */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* Light text */
+    background-color: #121212; 
+    color: #ffffff; 
 }
 
 .app-container {
-  display: flex;
-  height: 100vh;
+    display: flex;
+    height: 100vh;
 }
 
-.app-header, footer {
-    background-color: #212121;
-    padding: 20px;
-    text-align: center;
-}
-
-.main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
 
 .input-box {
     margin-top: 20px;
@@ -40,7 +28,7 @@ body, html {
 }
 
 .btn {
-    background-color: #6200ea; /* A vibrant color for buttons */
+    background-color: #6200ea; 
     color: white;
     cursor: pointer;
 }
@@ -54,5 +42,5 @@ body, html {
     padding: 10px;
     border: 1px solid #333;
     border-radius: 4px;
-    color: #00c853; /* Success color */
+    color: #00c853; 
 }
