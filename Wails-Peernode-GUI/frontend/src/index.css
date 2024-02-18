@@ -1,72 +1,58 @@
-html {
-  background-color: rgba(33, 37, 43, 1);
-  text-align: center;
-  color: white;
+/* index.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
 }
 
-body {
-  margin: 0;
-  color: white;
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+.app-container {
+  display: flex;
+  height: 100vh;
 }
 
-@font-face {
-  font-family: "Nunito";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""),
-    url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
+.app-header, footer {
+    background-color: #212121;
+    padding: 20px;
+    text-align: center;
 }
 
-.logo {
-  display: block;
-  width: 35%;
-  height: 35%;
-  margin: auto;
-  padding: 15% 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url("./assets/images/logo-dark.svg");
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+.input-box {
+    margin-top: 20px;
+}
+
+.input, .btn {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.input {
+    width: 200px;
+}
+
+.btn {
+    background-color: #6200ea; /* A vibrant color for buttons */
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3700b3;
+}
+
 .result {
-  height: 20px;
-  line-height: 20px;
-  margin: 1.5rem auto;
-}
-.input-box .btn {
-  width: 60px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 3px;
-  border: none;
-  margin: 0 0 0 20px;
-  padding: 0 8px;
-  cursor: pointer;
-}
-.input-box .btn:hover {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  color: #333333;
-}
-
-.input-box .input {
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 10px;
-  background-color: rgba(240, 240, 240, 1);
-  -webkit-font-smoothing: antialiased;
-}
-
-.input-box .input:hover {
-  border: none;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.input-box .input:focus {
-  border: none;
-  background-color: rgba(255, 255, 255, 1);
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #00c853; /* Success color */
 }

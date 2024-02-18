@@ -1,32 +1,48 @@
-import React, { useState } from 'react';
-import { render } from 'react-dom';
-
-import './index.css';
+import React, { useState } from "react";
+import { render } from "react-dom";
+import "./index.css";
+import "./sidebar.css";
 
 const App = () => {
-  const [result, setResult] = useState('Please enter your name below 👇');
-  const [name, setName] = useState('');
-
-  const greet = () => {
-    window.go.main.App.Greet(name).then((result) => {
-      setResult(result);
-   });
-  };
-
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
-
   return (
-    <>
-      <div className="logo" />
-      <div className="result">{result}</div>
-      <div className="input-box" data-wails-no-drag>
-        <input className="input" type="text" autoComplete="off" value={name} onChange={handleChange} />
-        <button className="btn" onClick={greet}>Greet</button>
+    <div className="app-container">
+      <div className="sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-label">Overview</div>
+          <button
+            className="sidebar-button"
+            onClick={() => {
+              /* TODO: make links to correct page  */
+            }}
+          >
+            Dashboard
+          </button>
+        </div>
+        <div className="sidebar-section">
+          <div className="sidebar-label">Data Access</div>
+          <button
+            className="sidebar-button"
+            onClick={() => {
+              /* trigger file upload */
+            }}
+          >
+            Upload File
+          </button>
+        </div>
       </div>
-    </>
+
+      <div className="main-content">
+        <header className="app-header">
+          <h1>Welcome to Peer App</h1>
+          <p>Your go-to app for seamless peer-to-peer interactions.</p>
+        </header>
+        <main></main>
+        <footer>
+          <p>Peer App © 2024</p>
+        </footer>
+      </div>
+    </div>
   );
 };
 
-render(<App />, document.querySelector('#root'));
+render(<App />, document.querySelector("#root"));
