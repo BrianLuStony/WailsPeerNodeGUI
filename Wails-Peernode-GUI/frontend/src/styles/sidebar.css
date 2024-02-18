@@ -22,19 +22,27 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.sidebar-label {
-    font-size: 16px;
-    margin-bottom: 10px;
+.sidebar-label-title {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bolder;
+
+}
+
+.sidebar-labels {
+    font-size: 17px;
+    margin-top: 25px;
     font-weight: bold;
-    padding: 10px;
 
 }
 
 .sidebar-button {
     width: 100%;
     padding: 10px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #444; 
+    background-color: #444;  
     color: white; 
     border: none;
     border-radius: 4px;
