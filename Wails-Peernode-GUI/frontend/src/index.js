@@ -9,7 +9,7 @@ const App = () => {
     <div className="app-container">
 <div className="sidebar">
           <div className="sidebar-section">
-            <div className="sidebar-label-title">RatCoin</div>
+            <div className="sidebar-label-title">OrcaNet</div>
 
           <div className="sidebar-section">
             <div className="sidebar-labels">Overview</div>

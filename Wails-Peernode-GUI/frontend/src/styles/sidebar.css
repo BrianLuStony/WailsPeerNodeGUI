@@ -1,10 +1,12 @@
 .sidebar {
-    width: 240px; 
-    background-color: #333; 
+    width: 240px;
+    background-color: #333;
     color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Ensures it covers the viewport height at a minimum */
+    height: auto; 
 }
 
 nav a {
