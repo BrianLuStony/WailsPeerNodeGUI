@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
-import "./styles/index.css";
-import "./styles/sidebar.css";
-import Dashboard from "./components/dashboard";
+import "../styles/index.css";
+import "../styles/sidebar.css";
+import Dashboard from "./dashboard";
+import logo from '../assets/images/orca.jpg';
 
 const App = () => {
   return (
     <div className="app-container">
 <div className="sidebar">
           <div className="sidebar-section">
-            <div className="sidebar-label-title">OrcaNet</div>
-
+            <div className="sidebar-label-title">
+            <img src={logo} alt="OrcaNet Logo" />OrcaNet</div>
           <div className="sidebar-section">
             <div className="sidebar-labels">Overview</div>
             <button
@@ -40,4 +40,4 @@ const App = () => {
   );
 };
 
-render(<App />, document.querySelector("#root"));
+export default App;
