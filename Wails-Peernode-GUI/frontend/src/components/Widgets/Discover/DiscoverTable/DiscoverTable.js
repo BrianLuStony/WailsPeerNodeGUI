@@ -7,9 +7,9 @@ import FileDownload from './FileDownload';
 import Icon from '../assets/images/Icon';
 
 // Icons
-import DownloadIcon from '../assets/images/DownloadIcon';
-import UploadIcon from '../assets/images/UploadIcon';
-import CheckIcon from '../assets/images/CheckIcon';
+import DownloadIcon from '../assets/icons/DownloadIcon';
+import UploadIcon from '../assets/icons/UploadIcon';
+import CheckIcon from '../assets/icons/CheckIcon';
 
 const DiscoverTable = () => {
   // Assuming use of Redux for state management

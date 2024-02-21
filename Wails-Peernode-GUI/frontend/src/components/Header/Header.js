@@ -6,11 +6,11 @@ import './Header.scss';
 import Navigation from './Navigation';
 import Notifications from './Notifications';
 import Button from './Button';
-import Divider from './Divider';
-import Icon from './Icon';
+import Divider from '../Divider/Divider';
+import Icon from '../Icon/Icon';
 
 // Assuming Logo is a React component and not just an SVG import
-import Logo from './Logo';
+import Logo from '../../assets/icons/Logo';
 
 const Header = () => {
   // Local state similar to Vue's data function
