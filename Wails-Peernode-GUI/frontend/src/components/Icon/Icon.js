@@ -50,7 +50,7 @@ const ICONS = {
 };
 
 // IconComponent functional component
-const IconComponent = ({ icon, active }) => {
+const Icon= ({ icon, active }) => {
   const Icon = ICONS[icon]; // Dynamically select the icon
 
   // If no icon found, render nothing or a default placeholder
@@ -60,4 +60,4 @@ const IconComponent = ({ icon, active }) => {
   return <Icon className={`icon ${active ? 'icon_active' : ''}`} />;
 };
 
-export default IconComponent;
+export default Icon;
