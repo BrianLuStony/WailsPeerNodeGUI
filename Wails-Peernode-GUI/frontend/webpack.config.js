@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     clean: true,
@@ -25,11 +25,15 @@ module.exports = {
       },
       // Add the rule for image files here
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'images/[name][ext]', // Optional: customize the output directory and file naming
         },
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'], // Use url-loader or file-loader for importing SVGs as files
       },
     ],
   },

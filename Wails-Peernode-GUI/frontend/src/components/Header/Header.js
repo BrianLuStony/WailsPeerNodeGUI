@@ -1,73 +1,63 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useSelector, useDispatch } from 'react-redux'; // Assuming Redux for state management
-import './Header.scss';
+import React from 'react';
+import './Header.css';
 
-// Assuming these components are already created for React
-import Navigation from './Navigation';
-import Notifications from './Notifications';
-import Button from './Button';
+import Navigation from '../Navigation/Navigation';
+import Notifications from '../Notifications/Notifications';
+import Button from '../Button/Button';
 import Divider from '../Divider/Divider';
 import Icon from '../Icon/Icon';
-
-// Assuming Logo is a React component and not just an SVG import
-import Logo from '../../assets/icons/Logo';
+import Logo from '../../assets/icons/Logo.svg';
 
 const Header = () => {
-  // Local state similar to Vue's data function
-  const [showAddFileModal, setShowAddFileModal] = useState(false);
 
-  // Assuming you have a global state management like Redux or Context API
-  const { counter, open } = useSelector(state => state.notifications);
-  const { remoteFilesConfig, localFilesConfig } = useSelector(state => state.files);
-
-  const dispatch = useDispatch(); // If you're using Redux
-
-  // Methods equivalent in React
+  // Placeholder functions for modal interactions, these don't do anything for now
   const openAddFileModal = () => {
-    // Assuming you have an event bus or use a global context to handle this
-    // this.$bus.$emit("openAddFileModal");
+    console.log("Add file modal placeholder action");
   };
 
   const openSettingsModal = () => {
-    // Handle opening settings modal
+    console.log("Settings modal placeholder action");
   };
 
   const openUserWalletModal = () => {
-    // Handle opening user wallet modal
+    console.log("User wallet modal placeholder action");
   };
 
+  // Placeholder function for toggling notifications, these don't do anything for now
   const toggleNotifications = () => {
-    dispatch({ type: 'notifications/toggleNotifications', payload: !open }); // Example Redux action
+    console.log("Toggle notifications placeholder action");
   };
 
   return (
     <header className="header">
       <div className="header__left">
-        <Logo className="header__logo" />
-        <Navigation />
+        {/* <Logo className="header__logo" /> */}
+        {/* <Navigation /> */}
       </div>
 
       <div className="header__right">
-        <Button theme="primary" className="header__button" onClick={openAddFileModal}>
+        <Button type="button" theme="primary" className="header__button" onClick={openAddFileModal}>
           Add file
         </Button>
         <Divider />
         <Icon
           className="header__icon"
-          icon="NotificationsIcon"
-          onClick={() => toggleNotifications()}
+          iconName="NotificationsIcon"
+          onClick={toggleNotifications}
         />
-        <div className="header__notifications-marker" style={{ display: counter ? 'block' : 'none' }}></div>
+        <div className="header__icon" onClick={toggleNotifications}>Test Notifications</div>
+
+        {/* Assuming counter logic is not needed for display purposes, removed the marker */}
         <Notifications />
         <Icon
           onClick={openSettingsModal}
           className="header__icon"
-          icon="SettingsIcon"
+          iconName="SettingsIcon"
         />
         <Icon
           onClick={openUserWalletModal}
           className="header__icon"
-          icon="WalletIcon"
+          iconName="WalletIcon"
         />
       </div>
     </header>
