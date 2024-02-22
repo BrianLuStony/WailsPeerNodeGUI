@@ -14,6 +14,8 @@
   position: relative;
   background-color: transparent;
   font-weight: 600; /* Example for $fw-semi-bold */
+  border-radius: 20px; /* Adjust as needed for rounded corners */
+  margin: 0 10px;
 }
 
 .navigation__item:after {
@@ -30,14 +32,12 @@
 }
 
 .navigation__item:hover {
-  color: #FFFFFF; /* Example for $white */
-  background-color: transparent;
+  background-color: #e0e0e0;
 }
 
 .navigation__item:hover path,
 .navigation__item:hover circle {
-  background-color: transparent;
-  stroke: #FFFFFF; /* Example for $white */
+  stroke: inherit;
 }
 
 .navigation__item.active {
@@ -64,7 +64,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -10px;
+  margin-top: -20px;
   margin-right: 20px; /* Adjust the spacing as needed */
   padding: 5px; /* Adds padding around the image */
   border-radius: 50%; /* Makes the container round */
