@@ -1,47 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
-import "./sidebar.css";
 import Dashboard from "../Dashboard/dashboard";
+import Discover from "../../pages/Discover";
+import Transfers from "../../pages/Transfers";
 import Header from "../Header/Header";
-import logo from '../../assets/images/orca.jpg';
+
+import { BrowserRouter as Router,Routes, Switch, Route, Link } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div>
-    <Header />
-    <div className="app-container">
-<div className="sidebar">
-          <div className="sidebar-section">
-            <div className="sidebar-label-title">
-            <img src={logo} alt="OrcaNet Logo" />OrcaNet</div>
-          <div className="sidebar-section">
-            <div className="sidebar-labels">Overview</div>
-            <button
-                className="sidebar-button"
-                onClick={() => {
-                }}  //Todo: make links
-              >
-                Dashboard
-              </button>  
-          </div>
-          <div className="sidebar-section">
-            <div className="sidebar-labels">Data Access</div>
-            <button
-              className="sidebar-button"
-              onClick={() => {
-                /* trigger file upload */
-              }}
-            >
-              Upload File
-            </button>
-          </div>
+      <div className="app">
+        <Header />
+        <div className="main-content">
+          <Routes>
+          <Route path="/discover" element={<Discover />} />
+          <Route path="/transfers" element={<Transfers />}/>
+          <Route exact path="/" element={<Dashboard />} />
+          </Routes>
         </div>
       </div>
-      
-      <Dashboard />
-    </div>
-    </div>
   );
 };
+
 
 export default App;

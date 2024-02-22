@@ -54,3 +54,8 @@ body, html {
     border-radius: 4px;
     color: #00c853; 
 }
+
+.app .main-content {
+    padding-top: 50px; /* Adjust this value to match the height of your Header */
+  }
+  

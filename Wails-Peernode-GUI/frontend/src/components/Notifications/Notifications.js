@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import moment from 'moment';
 import './Notifications.css';
 
-const Notifications = () => {
-    const [open, setOpen] = useState(false);
+const Notifications = ({ isOpen, toggleOpen }) => {
+    console.log(toggleOpen);
+    // const [open, setOpen] = useState(false);
     const [notifications, setNotifications] = useState([
         { title: 'New Message', text: 'You have received a new message.', timestamp: Date.now() / 1000 - 600 },
         { title: 'Welcome', text: 'Thank you for joining our platform.', timestamp: Date.now() / 1000 - 3600 },
@@ -11,8 +12,12 @@ const Notifications = () => {
 
     const notificationsRef = useRef(null);
 
-    const closeNotifications = () => setOpen(false);
-    const clearNotifications = () => setNotifications([]);
+    const closeNotifications = () => toggleOpen(false);
+    const openNotifications = () => toggleOpen(true);
+    const clearNotifications = () => {
+        setNotifications([]);
+        toggleOpen(false); // Optionally close the notifications panel on clear
+    };
 
     // Custom click-away handler
     useEffect(() => {
@@ -28,10 +33,10 @@ const Notifications = () => {
             // Unbind the event listener on clean up
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [notificationsRef]);
+    }, [toggleOpen]);
 
     return (
-        <div ref={notificationsRef} className={`notifications ${open ? 'notifications_visible' : ''}`}>
+        <div ref={notificationsRef} className={`notifications ${isOpen ? 'notifications_visible' : ''}`}>
             <div className="notifications__wrapper">
                 <div className="notifications__header">
                     <div className="notifications__header-title">Notifications</div>
@@ -60,5 +65,4 @@ const Notifications = () => {
         </div>
     );
 };
-
 export default Notifications;

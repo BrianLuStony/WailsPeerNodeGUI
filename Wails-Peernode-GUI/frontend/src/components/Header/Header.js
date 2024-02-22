@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 import Navigation from '../Navigation/Navigation';
@@ -6,9 +6,14 @@ import Notifications from '../Notifications/Notifications';
 import Button from '../Button/Button';
 import Divider from '../Divider/Divider';
 import Icon from '../Icon/Icon';
-import Logo from '../../assets/icons/Logo.svg';
+import Logo from '../../assets/images/orca.jpg';
 
 const Header = () => {
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+
+  const toggleNotifications = () => {
+      setIsNotificationsOpen(!isNotificationsOpen);
+  };
 
   // Placeholder functions for modal interactions, these don't do anything for now
   const openAddFileModal = () => {
@@ -24,17 +29,15 @@ const Header = () => {
   };
 
   // Placeholder function for toggling notifications, these don't do anything for now
-  const toggleNotifications = () => {
-    console.log("Toggle notifications placeholder action");
-  };
+  // const toggleNotifications = () => {
+  //   console.log("Toggle notifications placeholder action");
+  // };
 
   return (
     <header className="header">
-      <div className="header__left">
-        {/* <Logo className="header__logo" /> */}
-        {/* <Navigation /> */}
+      <div className="header__left">    
+        <Navigation />
       </div>
-
       <div className="header__right">
         <Button type="button" theme="primary" className="header__button" onClick={openAddFileModal}>
           Add file
@@ -45,10 +48,7 @@ const Header = () => {
           iconName="NotificationsIcon"
           onClick={toggleNotifications}
         />
-        <div className="header__icon" onClick={toggleNotifications}>Test Notifications</div>
-
-        {/* Assuming counter logic is not needed for display purposes, removed the marker */}
-        <Notifications />
+        <Notifications isOpen={isNotificationsOpen} toggleOpen={setIsNotificationsOpen}/>
         <Icon
           onClick={openSettingsModal}
           className="header__icon"

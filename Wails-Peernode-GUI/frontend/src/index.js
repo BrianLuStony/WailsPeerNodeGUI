@@ -1,12 +1,16 @@
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {Greet} from '../wailsjs/go/main/App.js';
 import App from './components/App/app.js';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 
