@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom';
 import {Greet} from '../wailsjs/go/main/App.js';
 import App from './components/App/app.js';
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
 
 
 

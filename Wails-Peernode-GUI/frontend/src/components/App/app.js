@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "./index.css";
 import "./sidebar.css";
 import Dashboard from "../Dashboard/dashboard";
+import Header from "../Header/Header";
 import logo from '../../assets/images/orca.jpg';
 
 const App = () => {
   return (
+    <div>
+    <Header />
     <div className="app-container">
 <div className="sidebar">
           <div className="sidebar-section">
@@ -34,8 +37,9 @@ const App = () => {
           </div>
         </div>
       </div>
-
+      
       <Dashboard />
+    </div>
     </div>
   );
 };

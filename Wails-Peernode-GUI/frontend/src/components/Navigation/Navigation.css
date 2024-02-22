@@ -1,0 +1,55 @@
+.navigation {
+  display: flex;
+  margin-left: 16px; /* Example for $padding-md */
+  position: relative;
+  top: 15px;
+}
+
+.navigation__item {
+  display: flex;
+  align-items: center;
+  padding: 0 8px 24px 8px; /* Examples for $padding-sm and $padding-xl */
+  transition: all 0.3s ease; /* Example for $transition-1 */
+  cursor: pointer;
+  position: relative;
+  font-weight: 600; /* Example for $fw-semi-bold */
+}
+
+.navigation__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: transparent;
+  left: 0;
+  transition: all 0.3s ease; /* Example for $transition-1 */
+  border-radius: 4px; /* Example for $br-xs */
+}
+
+.navigation__item:hover {
+  color: #FFFFFF; /* Example for $white */
+}
+
+.navigation__item:hover path,
+.navigation__item:hover circle {
+  stroke: #FFFFFF; /* Example for $white */
+}
+
+.navigation__item.active {
+  color: #FFFFFF; /* Example for $white */
+}
+
+.navigation__item.active:after {
+  background: linear-gradient(45deg, #007BFF, #FFC107); /* Example for $primary-gradient */
+}
+
+.navigation__item.active path,
+.navigation__item.active circle {
+  stroke: #FFFFFF; /* Example for $white */
+}
+
+.navigation__icon {
+  margin-right: 4px; /* Example for $padding-xs */
+}

@@ -1,7 +1,8 @@
-<template>
-  <div class="divider"></div>
-</template>
+import React from 'react';
+import './Divider.css'; // Adjust the import path as necessary
 
-<style lang="scss">
-@import "./Divider";
-</style>
+const Divider = () => {
+  return <div className="divider"></div>;
+};
+
+export default Divider;
