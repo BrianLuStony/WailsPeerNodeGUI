@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #007bff; 
-    --secondary-color: #6c757d;
-    --background-color: #f8f9fa; 
-    --text-color: #212529;
-    --text-color-light: #ffffff; 
-    --font-family: 'Roboto', sans-serif; 
+    --primary-color: #474f5f;
+    --secondary-color: #13b19e;
+    --background-color: #2e3542;
+    --text-color: #fff;
+    --text-color-light: #ffffff;
+    --font-family: 'Roboto', sans-serif;
 }
 
 body, html {
@@ -15,12 +15,40 @@ body, html {
     color: var(--text-color);
 }
 
-.app-container {
+.app {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    height: 100%;
 }
 
+.app-body {
+    display: flex;
+    flex-grow: 1;
+    padding-top: 88px;
+}
+
+
+.header {
+    height: 88px;
+    padding-right: 16px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    width: calc(100% - 60px);
+    left: 100px;
+    z-index: 10;
+}
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-left: 50px; 
+    padding-top: 88px; 
+    overflow: hidden;
+}
 
 .input-box {
     margin-top: 20px;
@@ -38,7 +66,7 @@ body, html {
 }
 
 .btn {
-    background-color: #6200ea; 
+    background-color: #6200ea;
     color: white;
     cursor: pointer;
 }
@@ -52,10 +80,5 @@ body, html {
     padding: 10px;
     border: 1px solid #333;
     border-radius: 4px;
-    color: #00c853; 
+    color: #00c853;
 }
-
-.app .main-content {
-    padding-top: 50px; /* Adjust this value to match the height of your Header */
-  }
-  

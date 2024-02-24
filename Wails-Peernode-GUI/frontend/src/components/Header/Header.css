@@ -1,16 +1,3 @@
-.header {
-    height: 88px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    border-bottom: 1px solid #eaeaea;
-    position: fixed;
-    top: 0;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 10;
-  }
   
   .header__notifications-marker {
     width: 8px;

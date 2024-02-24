@@ -4,10 +4,6 @@ import "./dashboard.css";
 const Dashboard = () => {
   return (
     <div className="main-content">
-      <header className="app-header">
-        <h1>Welcome to OrcaNet</h1>
-        <p>Your go-to app for seamless peer-to-peer interactions.</p>
-      </header>
       <main className="dashboard-main">
         <section className="file-upload">
           <h2 className="section-title">Upload Files</h2>
