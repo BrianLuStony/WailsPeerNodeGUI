@@ -1,49 +1,78 @@
-import React, { useState } from "react";
-import "./dashboard.css";
+import React from 'react';
+import './dashboard.css'; // Ensure you have the CSS file for styling
 
-const Dashboard = () => {
+const fileData = [
+  {
+    id: 1,
+    name: 'The.Eric.Andre.Show...',
+    downloadSpeed: '1 MB/s',
+    uploadSpeed: '310 Bytes/s',
+    status: 'Downloading: 6.94%',
+    remaining: '6 minutes',
+    seeds: '2'
+  },
+  {
+    id: 2,
+    name: 'Let It Be Sheet Music...',
+    downloadSpeed: '0 Bytes/s',
+    uploadSpeed: '0 Bytes/s',
+    status: 'Seeding',
+    remaining: 'Finished',
+    seeds: '1'
+  },
+  {
+    id: 3,
+    name: 'Test.txt',
+    downloadSpeed: '0 Bytes/s',
+    uploadSpeed: '0 Bytes/s',
+    status: 'Seeding',
+    remaining: 'Finished',
+    seeds: '1'
+  },
+  {
+    id: 4,
+    name: 'React App (1).webm',
+    downloadSpeed: '0 Bytes/s',
+    uploadSpeed: '0 Bytes/s',
+    status: 'Seeding',
+    remaining: 'Finished',
+    seeds: '1'
+  }
+];
+
+const FileTransfers = () => {
   return (
-    <div className="main-content">
-      <main className="dashboard-main">
-        <section className="file-upload">
-          <h2 className="section-title">Upload Files</h2>
-          <input type="file" multiple />
-          <p className="info-text">
-            Drag and drop files here or click to select files to upload.
-          </p>
-        </section>
-        <section className="about-ipfs">
-          <h2 className="section-title">About IPFS</h2>
-          <p className="info-text">
-            IPFS is a peer-to-peer hypermedia protocol designed to make the web
-            faster, safer, and more open.
-          </p>
-        </section>
-      </main>
-      <main>
-        <section className="dashboard-overview">
-          <h2>Dashboard Overview</h2>
-          <div className="stats-grid">
-            <div className="stat">
-              <span>Total Files</span>
-              <strong>1024</strong>
-            </div>
-            <div className="stat">
-              <span>Total Storage</span>
-              <strong>32Gb</strong>
-            </div>
-            <div className="stat">
-              <span>Total Peers</span>
-              <strong>1,782</strong>
-            </div>
+    <div className="file-transfers-container">
+  
+      <h1>File Transfers</h1>
+      
+      <div className="file-list">
+        <div className="file-list-header">
+          <span>File</span>
+          <span>Down</span>
+          <span>Up</span>
+          <span>Status</span>
+          <span>Remaining</span>
+          <span>Seeds</span>
+        </div>
+        {fileData.map((file) => (
+          <div key={file.id} className="file-list-item">
+            <span>{file.name}</span>
+            <span>{file.downloadSpeed}</span>
+            <span>{file.uploadSpeed}</span>
+            <span>{file.status}</span>
+            <span>{file.remaining}</span>
+            <span>{file.seeds}</span>
           </div>
-        </section>
-      </main>
-      <footer>
-        <p>OrcaNet © 2024</p>
-      </footer>
+        ))}
+      </div>
+      
+      <div className="file-transfers-footer">
+        <span>Total clients connected: 2</span>
+        <span>Avg Speed: 1.2 MB/s | 310 Bytes/s</span>
+      </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default FileTransfers;

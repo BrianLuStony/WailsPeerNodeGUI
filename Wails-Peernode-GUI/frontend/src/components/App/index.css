@@ -48,6 +48,8 @@ body, html {
     margin-left: 50px; 
     padding-top: 88px; 
     overflow: hidden;
+    padding-right: 50px;
+    padding-left: 100px;
 }
 
 .input-box {
